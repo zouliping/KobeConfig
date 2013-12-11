@@ -1,0 +1,1 @@
+wget -O- 'http://www.dytt8.net/' | iconv -f gb2312 -t utf-8 | grep '最新电影下载' -A 110 | sed "s/href='\//href='http:\/\/www.dytt8.net\//g" | mail -s "$(echo "电影天堂最新电影\nContent-Type: text/html")" liushuaikobe1993@163.com
