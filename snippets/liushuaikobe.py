@@ -1,5 +1,5 @@
 def outputLskobe():
-	lskobe = open(r'lskobe.txt', 'r')
+	lskobe = open(r'liushuaikobe.txt', 'r')
 	for line in lskobe:
 		print line,
 
