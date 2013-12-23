@@ -1,11 +1,45 @@
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438
+set encoding=utf-8
+set expandtab
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set backspace=2		" more powerful backspacing
 
+" Vundle configuration
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/taglist.vim'
+" Bundle 'vim-scripts/Conque-Shell'
+
+filetype plugin indent on
+
+" Theme
+set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h13
+set background=dark
+colorscheme solarized
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+" NERDTree
+nmap <F2> :NERDTreeToggle <CR>
+
+" Taglist
+let Tlist_Use_Right_Window=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_Show_One_File = 1
+nnoremap <silent> <F8> :TlistToggle <CR>
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
@@ -13,6 +47,6 @@ au BufWrite /private/etc/pw.* set nowritebackup
 
 " modify by liushuaikobe at 2013-11-16
 syntax on
+set laststatus=2
 set tabstop=4
 set number
-set encoding=utf-8
